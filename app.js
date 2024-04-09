@@ -22,12 +22,12 @@ redline is javascript object (rl)
 
 
 // Include the read line module for command line input 
-const redline = require ('readline')
+const readline = require ('readline')
 
 //create an interface for the input and output
-const rl = readling.createInterface({
+const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdin 
+    output: process.stdout
 })
 
 // function to generate a random number between min and max ( inclusive)
@@ -54,7 +54,7 @@ function guessNumber() {
         //check if the guess is correct, too high or too low
         if(guess === secertNumber) {
             console.log(`Correct! the number was ${secertNumber}. It took you ${attempts} attempts. `)
-            rl.close
+            rl.close()
         } else if (guess < secertNumber) {
             console.log('Too low!')
             guessNumber()
